@@ -1,14 +1,28 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AppShellRenderDirective } from './directives/app-shell-render.directive';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [
+    MatSidenavModule,
+    MatListModule,
+    RouterLink,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    RouterOutlet,
+    MatProgressSpinnerModule,
+    AppShellRenderDirective,
+  ],
 })
-export class AppComponent {
-  title = 'angular-ssr-training';
-}
+export class AppComponent {}
